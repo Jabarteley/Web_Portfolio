@@ -48,19 +48,19 @@ const Contact = () => {
     {
       icon: <Mail size={24} />,
       title: 'Email',
-      content: 'hello@yourportfolio.com',
-      link: 'mailto:hello@yourportfolio.com',
+      content: 'zagajabar1@gmail.com',
+      link: 'mailto:zagajabar1@gmail.com',
     },
     {
       icon: <Phone size={24} />,
       title: 'Phone',
-      content: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      content: '+2349045398005',
+      link: 'tel:+2349045398005',
     },
     {
       icon: <MapPin size={24} />,
       title: 'Location',
-      content: 'San Francisco, CA',
+      content: 'Lagos, Nigeria',
       link: null,
     },
   ];

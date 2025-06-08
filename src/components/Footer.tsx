@@ -72,7 +72,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-slate-400 text-sm">
-            &copy; {currentYear} Your Name. All rights reserved.
+            &copy; {currentYear} Abduljabar Asaju. All rights reserved.
           </p>
           
           <button

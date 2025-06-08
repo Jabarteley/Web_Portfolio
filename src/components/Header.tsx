@@ -38,7 +38,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 font-bold text-xl text-slate-800 dark:text-white">
             <a href="#home" className="flex items-center">
-              <span className="text-amber-500">Port</span>folio
+              <span className="text-amber-500">Abduljabar </span>Asaju
             </a>
           </div>
           
