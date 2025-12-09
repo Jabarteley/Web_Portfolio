@@ -73,7 +73,7 @@ const About = () => {
                   <LazyImage
                     src="/ad.avif"
                     alt="Professional portrait"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <motion.div

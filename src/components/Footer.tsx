@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
             <div className="font-bold text-2xl mb-2">
-              <span className="text-medium-spring-green-500">Port</span>folio
+              <span className="text-medium-spring-green-500">Abduljabar </span>Asaju
             </div>
             <p className="text-slate-300 max-w-md">
               Creating beautiful, functional digital experiences with an eye for detail

@@ -49,7 +49,7 @@ const LazyImage: React.FC<LazyImageProps> = memo(({
         ref={imgRef}
         src={src}
         alt={alt}
-        className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0 absolute inset-0'} transition-opacity duration-300`}
+        className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0 absolute inset-0'} transition-opacity duration-300 object-cover object-center`}
         style={{ display: isLoaded ? 'block' : 'none' }}
         loading="lazy"
         onError={() => setHasError(true)}
