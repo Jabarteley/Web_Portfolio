@@ -49,10 +49,9 @@ const Footer = () => {
               </h3>
               <ul className="space-y-2">
                 {[
-                  { name: 'GitHub', url: 'https://github.com' },
-                  { name: 'LinkedIn', url: 'https://linkedin.com' },
-                  { name: 'Twitter', url: 'https://twitter.com' },
-                  { name: 'Dribbble', url: 'https://dribbble.com' },
+                  { name: 'GitHub', url: 'https://github.com/Jabarteley' },
+                  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/abduljabar-asaju-70b4a1389' },
+                  { name: 'Portfolio', url: 'https://web-portfolio-abduljabar.vercel.app/' },
                 ].map((social) => (
                   <li key={social.name}>
                     <a
@@ -74,14 +73,23 @@ const Footer = () => {
           <p className="text-slate-400 text-sm">
             &copy; {currentYear} Abduljabar Asaju. All rights reserved.
           </p>
-          
-          <button
-            onClick={scrollToTop}
-            className="mt-4 md:mt-0 p-2 rounded-full bg-slate-800 hover:bg-amber-500 transition-colors"
-            aria-label="Scroll to top"
-          >
-            <ArrowUp size={20} />
-          </button>
+
+          <div className="flex items-center gap-4 mt-4 md:mt-0">
+            <a
+              href="/Abduljabar-Asaju-Resume1.pdf"
+              download
+              className="text-slate-400 hover:text-amber-500 transition-colors"
+            >
+              Download Resume
+            </a>
+            <button
+              onClick={scrollToTop}
+              className="p-2 rounded-full bg-slate-800 hover:bg-amber-500 transition-colors"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp size={20} />
+            </button>
+          </div>
         </div>
       </div>
     </footer>

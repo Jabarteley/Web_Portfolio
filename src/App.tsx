@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
 import { ThemeProvider } from './contexts/ThemeContext';
+
+// Lazy load components for better performance
+const Hero = lazy(() => import('./components/Hero'));
+const About = lazy(() => import('./components/About'));
+const Projects = lazy(() => import('./components/Projects'));
+const Skills = lazy(() => import('./components/Skills'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
   // State to track if page has loaded
@@ -26,13 +28,17 @@ function App() {
       <div className={`transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <Header />
         <main>
-          <Hero />
-          <About />
-          <Projects />
-          <Skills />
-          <Contact />
+          <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">Loading...</div>}>
+            <Hero />
+            <About />
+            <Projects />
+            <Skills />
+            <Contact />
+          </Suspense>
         </main>
-        <Footer />
+        <Suspense fallback={<div className="bg-slate-900 text-white py-12">Loading footer...</div>}>
+          <Footer />
+        </Suspense>
       </div>
     </ThemeProvider>
   );

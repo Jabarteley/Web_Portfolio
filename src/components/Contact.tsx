@@ -48,14 +48,14 @@ const Contact = () => {
     {
       icon: <Mail size={24} />,
       title: 'Email',
-      content: 'zagajabar1@gmail.com',
-      link: 'mailto:zagajabar1@gmail.com',
+      content: 'jabarasaju@gmail.com',
+      link: 'mailto:jabarasaju@gmail.com',
     },
     {
       icon: <Phone size={24} />,
       title: 'Phone',
-      content: '+2349045398005',
-      link: 'tel:+2349045398005',
+      content: '09045398005',
+      link: 'tel:09045398005',
     },
     {
       icon: <MapPin size={24} />,
@@ -114,18 +114,33 @@ const Contact = () => {
                 Connect With Me
               </h4>
               <div className="flex space-x-4">
-                {['github', 'linkedin', 'twitter', 'dribbble'].map((platform) => (
-                  <a
-                    key={platform}
-                    href={`https://${platform}.com`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white transition-colors"
-                    aria-label={`Connect on ${platform}`}
-                  >
-                    <span className="capitalize text-sm">{platform.charAt(0)}</span>
-                  </a>
-                ))}
+                <a
+                  href="https://github.com/Jabarteley"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white transition-colors"
+                  aria-label="Connect on GitHub"
+                >
+                  <span className="capitalize text-sm">G</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/abduljabar-asaju-70b4a1389"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white transition-colors"
+                  aria-label="Connect on LinkedIn"
+                >
+                  <span className="capitalize text-sm">L</span>
+                </a>
+                <a
+                  href="https://web-portfolio-abduljabar.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white transition-colors"
+                  aria-label="Visit portfolio"
+                >
+                  <span className="capitalize text-sm">P</span>
+                </a>
               </div>
             </div>
           </div>
