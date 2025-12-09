@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { skills } from '../data/skills';
 import AnimatedSection from './animations/ScrollAnimate';
+import GlassCard from './ui/GlassCard';
 
 const Skills = () => {
   const [activeTab, setActiveTab] = useState('technical');
@@ -26,10 +27,10 @@ const Skills = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              My <span className="text-amber-500">Skills</span>
+              My <span className="text-medium-spring-green-500">Skills</span>
             </motion.h2>
             <motion.div
-              className="w-16 h-1 bg-amber-500 mx-auto mb-6"
+              className="w-16 h-1 bg-medium-spring-green-500 mx-auto mb-6"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
@@ -55,7 +56,7 @@ const Skills = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === tab.id
-                    ? 'bg-slate-800 dark:bg-amber-500 text-white'
+                    ? 'bg-slate-800 dark:bg-medium-spring-green-500 text-white'
                     : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -72,9 +73,16 @@ const Skills = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredSkills.map((skill, index) => (
-              <motion.div
+              <GlassCard
+                className="bg-slate-50/30 dark:bg-slate-800/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 p-6 transition-shadow"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.15)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
+                  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                  border: '1px solid rgba(255, 255, 255, 0.18)'
+                }}
                 key={skill.id}
-                className="bg-slate-50 dark:bg-slate-800 p-6 rounded-lg shadow-sm transition-shadow"
                 whileHover={{ y: -10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +93,7 @@ const Skills = () => {
                   <h3 className="text-lg font-bold text-slate-800 dark:text-white">
                     {skill.name}
                   </h3>
-                  <div className="text-amber-500">{skill.icon}</div>
+                  <div className="text-medium-spring-green-500">{skill.icon}</div>
                 </div>
 
                 {skill.proficiency && (
@@ -98,7 +106,7 @@ const Skills = () => {
                   >
                     <div className="h-2 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                       <motion.div
-                        className="h-full bg-amber-500 rounded-full"
+                        className="h-full bg-medium-spring-green-500 rounded-full"
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.proficiency}%` }}
                         viewport={{ once: true }}
@@ -114,7 +122,7 @@ const Skills = () => {
                 <p className="text-sm text-slate-600 dark:text-slate-300">
                   {skill.description}
                 </p>
-              </motion.div>
+              </GlassCard>
             ))}
           </div>
         </div>

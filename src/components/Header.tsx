@@ -38,7 +38,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 font-bold text-xl text-slate-800 dark:text-white">
             <a href="#home" className="flex items-center">
-              <span className="text-amber-500">Abduljabar </span>Asaju
+              <span className="text-medium-spring-green-500">Abduljabar </span>Asaju
             </a>
           </div>
           
@@ -58,7 +58,7 @@ const Header = () => {
                 <a
                   href="/Abduljabar-Asaju-Resume1.pdf"
                   download
-                  className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700"
+                  className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-pale-green-500 dark:border-medium-spring-green-500 text-medium-spring-green-500 dark:text-medium-spring-green-500"
                 >
                   Resume
                 </a>
@@ -67,7 +67,13 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            
+            <a
+              href="/Abduljabar-Asaju-Resume1.pdf"
+              download
+              className="hidden md:block text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-pale-green-500 dark:border-medium-spring-green-500 text-medium-spring-green-500 dark:text-medium-spring-green-500"
+            >
+              Resume
+            </a>
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors"

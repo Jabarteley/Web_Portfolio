@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
             <div className="font-bold text-2xl mb-2">
-              <span className="text-amber-500">Port</span>folio
+              <span className="text-medium-spring-green-500">Port</span>folio
             </div>
             <p className="text-slate-300 max-w-md">
               Creating beautiful, functional digital experiences with an eye for detail
@@ -78,13 +78,13 @@ const Footer = () => {
             <a
               href="/Abduljabar-Asaju-Resume1.pdf"
               download
-              className="text-slate-400 hover:text-amber-500 transition-colors"
+              className="text-slate-400 hover:text-medium-spring-green-500 transition-colors"
             >
               Download Resume
             </a>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-full bg-slate-800 hover:bg-amber-500 transition-colors"
+              className="p-2 rounded-full bg-slate-800 hover:bg-medium-spring-green-500 transition-colors"
               aria-label="Scroll to top"
             >
               <ArrowUp size={20} />

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -48,8 +49,8 @@ const Contact = () => {
     {
       icon: <Mail size={24} />,
       title: 'Email',
-      content: 'jabarasaju@gmail.com',
-      link: 'mailto:jabarasaju@gmail.com',
+      content: 'zagajabar1@gmail.com',
+      link: 'mailto:zagajabar1@gmail.com',
     },
     {
       icon: <Phone size={24} />,
@@ -70,9 +71,9 @@ const Contact = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-4">
-            Get In <span className="text-amber-500">Touch</span>
+            Get In <span className="text-medium-spring-green-500">Touch</span>
           </h2>
-          <div className="w-16 h-1 bg-amber-500 mx-auto mb-6" />
+          <div className="w-16 h-1 bg-medium-spring-green-500 mx-auto mb-6" />
           <p className="text-lg text-slate-600 dark:text-slate-300">
             Have a project in mind or want to discuss opportunities? I'd love to hear from you.
           </p>
@@ -87,7 +88,7 @@ const Contact = () => {
             <div className="space-y-6">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-start">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-amber-100 dark:bg-slate-800 flex items-center justify-center text-amber-500 mr-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-medium-spring-green-100 dark:bg-slate-800/30 flex items-center justify-center text-medium-spring-green-500 mr-4">
                     {item.icon}
                   </div>
                   <div>
@@ -97,7 +98,7 @@ const Contact = () => {
                     {item.link ? (
                       <a 
                         href={item.link} 
-                        className="text-slate-600 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-500 transition-colors"
+                        className="text-slate-600 dark:text-slate-300 hover:text-medium-spring-green-500 dark:hover:text-medium-spring-green-500 transition-colors"
                       >
                         {item.content}
                       </a>
@@ -118,7 +119,7 @@ const Contact = () => {
                   href="https://github.com/Jabarteley"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-medium-spring-green-500 hover:text-white dark:hover:bg-medium-spring-green-500 dark:hover:text-white transition-colors"
                   aria-label="Connect on GitHub"
                 >
                   <span className="capitalize text-sm">G</span>
@@ -127,7 +128,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/abduljabar-asaju-70b4a1389"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-medium-spring-green-500 hover:text-white dark:hover:bg-medium-spring-green-500 dark:hover:text-white transition-colors"
                   aria-label="Connect on LinkedIn"
                 >
                   <span className="capitalize text-sm">L</span>
@@ -136,7 +137,7 @@ const Contact = () => {
                   href="https://web-portfolio-abduljabar.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-medium-spring-green-500 hover:text-white dark:hover:bg-medium-spring-green-500 dark:hover:text-white transition-colors"
                   aria-label="Visit portfolio"
                 >
                   <span className="capitalize text-sm">P</span>
@@ -239,7 +240,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-6 py-3 bg-slate-800 hover:bg-slate-700 dark:bg-amber-500 dark:hover:bg-amber-600 text-white rounded-lg transition-colors font-medium flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+                className="px-6 py-3 bg-slate-800 hover:bg-slate-700 dark:bg-medium-spring-green-500 dark:hover:bg-medium-spring-green-600 text-white rounded-lg transition-colors font-medium flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   'Sending...'

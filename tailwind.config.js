@@ -4,6 +4,32 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        'pale-green': {
+          50: '#f0fdf0',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#98FB98', // Main pale green
+          600: '#16a34a',
+          700: '#15803d',
+          800: '#166534',
+          900: '#14532d',
+        },
+        'medium-spring-green': {
+          50: '#f0fef0',
+          100: '#e0fde0',
+          200: '#c0fbc0',
+          300: '#a0f9a0',
+          400: '#80f780',
+          500: '#00FA9A', // Medium Spring Green
+          600: '#00c87a',
+          700: '#00965a',
+          800: '#00643a',
+          900: '#00321a',
+        }
+      },
       fontFamily: {
         sans: [
           'Inter',

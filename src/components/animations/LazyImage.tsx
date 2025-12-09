@@ -52,6 +52,7 @@ const LazyImage: React.FC<LazyImageProps> = memo(({
         className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0 absolute inset-0'} transition-opacity duration-300`}
         style={{ display: isLoaded ? 'block' : 'none' }}
         loading="lazy"
+        onError={() => setHasError(true)}
       />
     </div>
   );
