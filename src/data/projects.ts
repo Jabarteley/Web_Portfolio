@@ -18,6 +18,7 @@ export const projects: Project[] = [
     image: 'https://images.pexels.com/photos/6146970/pexels-photo-6146970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     category: 'startup',
     technologies: ['React', 'Next.js', 'Node.js', 'Marketplace', 'Authentication'],
+    liveUrl: 'https://www.kampushub.com.ng/',
   },
   {
     id: 2,

@@ -4,7 +4,7 @@ export const debounce = <Args extends unknown[], ReturnValue>(
   wait: number
 ) => {
   let timeout: ReturnType<typeof setTimeout>;
-  return ((...args: Parameters<T>) => {
+  return ((...args: Args) => {
     clearTimeout(timeout);
     timeout = setTimeout(() => func(...args), wait);
   }) as (...args: Args) => void;

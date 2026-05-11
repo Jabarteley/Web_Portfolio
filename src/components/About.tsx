@@ -1,30 +1,44 @@
-import { Code, Lightbulb, Award, Rocket } from 'lucide-react';
+import { Code, Rocket, Server, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
-import LazyImage from './animations/LazyImage';
 import AnimatedSection from './animations/ScrollAnimate';
 import GlassCard from './ui/GlassCard';
 
 const About = () => {
-  const qualities = [
+  const facts = [
     {
-      icon: <Code size={24} />,
-      title: 'Clean Code',
-      description: 'I write code that is readable, maintainable, and follows best practices.',
+      value: '2+',
+      label: 'Products co-founded',
     },
     {
-      icon: <Lightbulb size={24} />,
-      title: 'Creative Solutions',
-      description: 'I approach problems with innovative thinking and creative solutions.',
+      value: 'MVP',
+      label: 'Launch-ready builds',
     },
     {
-      icon: <Award size={24} />,
-      title: 'Quality Focus',
-      description: 'I pay attention to details and ensure high-quality output in all projects.',
+      value: 'Full stack',
+      label: 'Web, mobile, backend',
+    },
+  ];
+
+  const strengths = [
+    {
+      icon: <Rocket size={20} />,
+      title: 'Product ownership',
+      text: 'I can take ideas from MVP planning to launch-ready execution.',
     },
     {
-      icon: <Rocket size={24} />,
-      title: 'Fast Learner',
-      description: 'I quickly adapt to new technologies and methodologies.',
+      icon: <Code size={20} />,
+      title: 'Frontend quality',
+      text: 'Responsive React interfaces with clean structure and usable flows.',
+    },
+    {
+      icon: <Server size={20} />,
+      title: 'Backend depth',
+      text: 'APIs, authentication, admin systems, bookings, and platform logic.',
+    },
+    {
+      icon: <ShieldCheck size={20} />,
+      title: 'Reliable delivery',
+      text: 'I focus on maintainable systems, role-based access, and real users.',
     },
   ];
 
@@ -40,10 +54,10 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              About <span className="text-pale-green-500">Me</span>
+              About <span className="text-medium-spring-green-500">Me</span>
             </motion.h2>
             <motion.div
-              className="w-16 h-1 bg-pale-green-500 mx-auto mb-6"
+              className="w-16 h-1 bg-medium-spring-green-500 mx-auto mb-6"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
@@ -62,86 +76,66 @@ const About = () => {
           </div>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <AnimatedSection animationType="slideInLeft">
-            <GlassCard
-              className="bg-white/30 dark:bg-slate-800/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 p-0 relative"
-              blur="8px"
-            >
-              <div className="relative">
-                <div className="aspect-[4/5] bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden">
-                  <LazyImage
-                    src="/abduljabar.jpeg"
-                    alt="Professional portrait"
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-                <motion.div
-                  className="absolute -bottom-3 -right-3 sm:-bottom-6 sm:-right-6 w-20 h-20 sm:w-32 sm:h-32 bg-medium-spring-green-500 rounded-lg -z-10"
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                />
-              </div>
-            </GlassCard>
-          </AnimatedSection>
-
-          <AnimatedSection animationType="slideInRight">
-            <GlassCard
-              className="bg-white/30 dark:bg-slate-800/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 p-5 sm:p-6"
-              blur="8px"
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
+        <AnimatedSection animationType="slideInUp">
+          <GlassCard
+            className="mx-auto max-w-5xl bg-white/30 dark:bg-slate-800/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 p-5 sm:p-8"
+            blur="8px"
+          >
+            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+              <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mb-4">
-                  <span className="text-medium-spring-green-500">Full Stack Developer</span> & Product Thinker
+                  <span className="text-medium-spring-green-500">Full Stack Developer</span> with startup execution.
                 </h3>
-                <p className="text-slate-600 dark:text-slate-300 mb-6">
-                  I'm a Full Stack Developer with hands-on experience building scalable web
-                  and mobile applications using React, React Native, Node.js, TypeScript,
-                  and modern deployment platforms. I enjoy owning products end to end, from
-                  architecture and data models to responsive interfaces and real-world launch.
+                <p className="text-slate-600 dark:text-slate-300">
+                  I build web and mobile products with React, React Native, Node.js,
+                  TypeScript, and cloud deployment tools. I co-founded KampusHub and
+                  ByteConnect, where I worked across architecture, backend systems,
+                  admin tools, and user-facing workflows.
                 </p>
-                <p className="text-slate-600 dark:text-slate-300 mb-8">
-                  I co-founded platforms including KampusHub and ByteConnect, where I worked
-                  across product strategy, backend systems, admin tools, marketplace workflows,
-                  and community-focused features. I'm currently pursuing a B.Sc. in Computer
-                  Science at Federal University Wukari, with expected graduation in 2026.
-                </p>
-
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {qualities.map((quality, index) => (
-                    <motion.div
-                      key={index}
-                      className="flex items-start"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.1 * index }}
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  {facts.map((item) => (
+                    <div
+                      key={item.label}
+                      className="rounded-lg border border-slate-200 bg-white/70 p-4 dark:border-slate-700 dark:bg-slate-900/60"
                     >
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-medium-spring-green-100 dark:bg-slate-800 flex items-center justify-center text-medium-spring-green-500 mr-3">
-                        {quality.icon}
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-slate-800 dark:text-white">
-                          {quality.title}
-                        </h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-400">
-                          {quality.description}
-                        </p>
-                      </div>
-                    </motion.div>
+                      <p className="text-xl font-bold text-slate-900 dark:text-white">
+                        {item.value}
+                      </p>
+                      <p className="mt-1 text-xs font-semibold text-slate-600 dark:text-slate-300">
+                        {item.label}
+                      </p>
+                    </div>
                   ))}
                 </div>
-              </motion.div>
-            </GlassCard>
-          </AnimatedSection>
-        </div>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                {strengths.map((strength, index) => (
+                  <motion.div
+                    key={strength.title}
+                    className="flex gap-3 rounded-lg bg-slate-50 p-4 dark:bg-slate-900/70"
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.06 * index }}
+                  >
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-medium-spring-green-100 text-medium-spring-green-600 dark:bg-slate-800 dark:text-medium-spring-green-400">
+                      {strength.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-slate-800 dark:text-white">
+                        {strength.title}
+                      </h4>
+                      <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                        {strength.text}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </GlassCard>
+        </AnimatedSection>
       </div>
     </section>
   );

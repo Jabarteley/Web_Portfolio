@@ -15,6 +15,11 @@ const Projects = () => {
 
   const categories = ['all', ...new Set(projects.map(project => project.category))];
 
+  const openProjectWebsite = (url?: string) => {
+    if (!url) return;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="projects" className="py-16 sm:py-24 bg-slate-50 dark:bg-slate-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,10 +76,27 @@ const Projects = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project, index) => {
+            const projectTarget = project.liveUrl ?? project.githubUrl;
+            const hasProjectTarget = Boolean(projectTarget);
+
+            return (
             <GlassCard
-              className="min-w-0 bg-white/30 dark:bg-slate-900/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 rounded-lg overflow-hidden shadow-md group"
+              className={`min-w-0 bg-white/30 dark:bg-slate-900/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 rounded-lg overflow-hidden shadow-md group ${
+                hasProjectTarget ? 'cursor-pointer' : ''
+              }`}
               key={project.id}
+              role={hasProjectTarget ? 'link' : undefined}
+              tabIndex={hasProjectTarget ? 0 : undefined}
+              aria-label={hasProjectTarget ? `Open ${project.title}` : undefined}
+              onClick={() => openProjectWebsite(projectTarget)}
+              onKeyDown={(event) => {
+                if (!hasProjectTarget) return;
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  openProjectWebsite(projectTarget);
+                }
+              }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -102,6 +124,7 @@ const Projects = () => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(event) => event.stopPropagation()}
                         className="bg-white rounded-full p-2 text-slate-800 hover:text-medium-spring-green-500 transition-colors"
                         aria-label="View live site"
                       >
@@ -113,6 +136,7 @@ const Projects = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(event) => event.stopPropagation()}
                         className="bg-white rounded-full p-2 text-slate-800 hover:text-medium-spring-green-500 transition-colors"
                         aria-label="View code on GitHub"
                       >
@@ -145,9 +169,15 @@ const Projects = () => {
                     </motion.span>
                   ))}
                 </div>
+                {hasProjectTarget && (
+                  <p className="mt-4 text-sm font-medium text-medium-spring-green-700 dark:text-medium-spring-green-400">
+                    Click card to {project.liveUrl ? 'visit website' : 'view project'}
+                  </p>
+                )}
               </div>
             </GlassCard>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
