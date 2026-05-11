@@ -13,24 +13,24 @@ const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-8 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <div className="min-w-0">
             <div className="font-bold text-2xl mb-2">
               <span className="text-medium-spring-green-500">Abduljabar </span>Asaju
             </div>
             <p className="text-slate-300 max-w-md">
-              Creating beautiful, functional digital experiences with an eye for detail
-              and a passion for excellence.
+              Building scalable web and mobile products with strong architecture,
+              practical execution, and user-focused interfaces.
             </p>
           </div>
           
-          <div className="grid grid-cols-2 gap-8 sm:gap-16">
+          <div className="grid w-full grid-cols-2 gap-8 sm:gap-16 md:w-auto">
             <div>
               <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
                 Navigation
               </h3>
               <ul className="space-y-2">
-                {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((item) => (
+                {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
                   <li key={item}>
                     <a
                       href={`#${item.toLowerCase()}`}
@@ -50,7 +50,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {[
                   { name: 'GitHub', url: 'https://github.com/Jabarteley' },
-                  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/abduljabar-asaju-70b4a1389' },
+                  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/abduljabar-asaju-4a9825265' },
                   { name: 'Portfolio', url: 'https://web-portfolio-abduljabar.vercel.app/' },
                 ].map((social) => (
                   <li key={social.name}>
@@ -69,14 +69,14 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center">
+        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <p className="text-slate-400 text-sm">
             &copy; {currentYear} Abduljabar Asaju. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-4 mt-4 md:mt-0">
+          <div className="flex w-full items-center justify-between gap-4 md:w-auto md:justify-start">
             <a
-              href="/Abduljabar-Asaju-Resume1.pdf"
+              href="/Abduljabar_Asaju_Resume.pdf"
               download
               className="text-slate-400 hover:text-medium-spring-green-500 transition-colors"
             >

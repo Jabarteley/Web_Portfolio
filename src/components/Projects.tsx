@@ -16,10 +16,10 @@ const Projects = () => {
   const categories = ['all', ...new Set(projects.map(project => project.category))];
 
   return (
-    <section id="projects" className="py-24 bg-slate-50 dark:bg-slate-800">
+    <section id="projects" className="py-16 sm:py-24 bg-slate-50 dark:bg-slate-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
             <motion.h2
               className="text-3xl font-bold text-slate-800 dark:text-white mb-4"
               initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ const Projects = () => {
           </div>
         </AnimatedSection>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 mb-10 sm:mb-12">
           {categories.map((category, index) => (
             <motion.button
               key={category}
@@ -73,7 +73,7 @@ const Projects = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <GlassCard
-              className="bg-white/30 dark:bg-slate-900/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 rounded-lg overflow-hidden shadow-md group"
+              className="min-w-0 bg-white/30 dark:bg-slate-900/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 rounded-lg overflow-hidden shadow-md group"
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ const Projects = () => {
                 <LazyImage
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-52 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   fallback="https://placehold.co/400x300/e0f2e9/10b981?text=Project+Image"
                 />
                 <motion.div
@@ -123,19 +123,19 @@ const Projects = () => {
                 </motion.div>
               </div>
               <div
-                className="p-6"
+                className="p-5 sm:p-6 min-w-0"
               >
-                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-800 dark:text-white mb-2 break-words hyphens-auto leading-snug">
                   {project.title}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-300 mb-4">
+                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-4">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
                     <motion.span
                       key={techIndex}
-                      className="text-xs font-medium px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded"
+                      className="max-w-full break-words text-xs font-medium px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded"
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}

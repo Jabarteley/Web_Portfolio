@@ -5,21 +5,22 @@ import AnimatedSection from './animations/ScrollAnimate';
 import GlassCard from './ui/GlassCard';
 
 const Skills = () => {
-  const [activeTab, setActiveTab] = useState('technical');
+  const [activeTab, setActiveTab] = useState('frontend');
 
   const tabs = [
-    { id: 'technical', label: 'Technical Skills' },
-    { id: 'design', label: 'Design Skills' },
-    { id: 'soft', label: 'Soft Skills' },
+    { id: 'frontend', label: 'Frontend' },
+    { id: 'backend', label: 'Backend' },
+    { id: 'devops', label: 'DevOps' },
+    { id: 'professional', label: 'Product' },
   ];
 
   const filteredSkills = skills.filter(skill => skill.category === activeTab);
 
   return (
-    <section id="skills" className="py-24 bg-white dark:bg-slate-900">
+    <section id="skills" className="py-16 sm:py-24 bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
             <motion.h2
               className="text-3xl font-bold text-slate-800 dark:text-white mb-4"
               initial={{ opacity: 0, y: 20 }}
@@ -43,7 +44,7 @@ const Skills = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              A comprehensive overview of my technical abilities, design skills, and professional competencies.
+              My core stack across frontend, backend, mobile, deployment, and product execution.
             </motion.p>
           </div>
         </AnimatedSection>
@@ -74,7 +75,7 @@ const Skills = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredSkills.map((skill, index) => (
               <GlassCard
-                className="bg-slate-50/30 dark:bg-slate-800/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 p-6 transition-shadow"
+                className="min-w-0 bg-slate-50/30 dark:bg-slate-800/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 p-5 sm:p-6 transition-shadow"
                 style={{
                   background: 'rgba(255, 255, 255, 0.15)',
                   backdropFilter: 'blur(8px)',
@@ -90,7 +91,7 @@ const Skills = () => {
                 transition={{ duration: 0.5, delay: 0.1 * index }}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold text-slate-800 dark:text-white">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-800 dark:text-white break-words pr-3">
                     {skill.name}
                   </h3>
                   <div className="text-medium-spring-green-500">{skill.icon}</div>

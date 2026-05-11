@@ -61,15 +61,15 @@ const Contact = () => {
     {
       icon: <MapPin size={24} />,
       title: 'Location',
-      content: 'Lagos, Nigeria',
+      content: 'Agege, Lagos, Nigeria',
       link: null,
     },
   ];
 
   return (
-    <section id="contact" className="py-24 bg-slate-50 dark:bg-slate-800">
+    <section id="contact" className="py-16 sm:py-24 bg-slate-50 dark:bg-slate-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
           <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-4">
             Get In <span className="text-medium-spring-green-500">Touch</span>
           </h2>
@@ -80,7 +80,7 @@ const Contact = () => {
         </div>
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-8">
-          <div className="md:col-span-2 bg-white dark:bg-slate-900 rounded-lg shadow-md p-8">
+          <div className="md:col-span-2 bg-white dark:bg-slate-900 rounded-lg shadow-md p-5 sm:p-8 min-w-0">
             <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-6">
               Contact Information
             </h3>
@@ -91,19 +91,19 @@ const Contact = () => {
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-medium-spring-green-100 dark:bg-slate-800/30 flex items-center justify-center text-medium-spring-green-500 mr-4">
                     {item.icon}
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="text-sm font-semibold text-slate-800 dark:text-white mb-1">
                       {item.title}
                     </h4>
                     {item.link ? (
                       <a 
                         href={item.link} 
-                        className="text-slate-600 dark:text-slate-300 hover:text-medium-spring-green-500 dark:hover:text-medium-spring-green-500 transition-colors"
+                        className="break-all text-slate-600 dark:text-slate-300 hover:text-medium-spring-green-500 dark:hover:text-medium-spring-green-500 transition-colors"
                       >
                         {item.content}
                       </a>
                     ) : (
-                      <p className="text-slate-600 dark:text-slate-300">{item.content}</p>
+                      <p className="break-words text-slate-600 dark:text-slate-300">{item.content}</p>
                     )}
                   </div>
                 </div>
@@ -125,7 +125,7 @@ const Contact = () => {
                   <span className="capitalize text-sm">G</span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/abduljabar-asaju-70b4a1389"
+                  href="https://www.linkedin.com/in/abduljabar-asaju-4a9825265"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-medium-spring-green-500 hover:text-white dark:hover:bg-medium-spring-green-500 dark:hover:text-white transition-colors"
@@ -146,7 +146,7 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="md:col-span-3 bg-white dark:bg-slate-900 rounded-lg shadow-md p-8">
+          <div className="md:col-span-3 bg-white dark:bg-slate-900 rounded-lg shadow-md p-5 sm:p-8 min-w-0">
             <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-6">
               Send Me a Message
             </h3>
@@ -240,7 +240,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-6 py-3 bg-slate-800 hover:bg-slate-700 dark:bg-medium-spring-green-500 dark:hover:bg-medium-spring-green-600 text-white rounded-lg transition-colors font-medium flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto px-6 py-3 bg-slate-800 hover:bg-slate-700 dark:bg-medium-spring-green-500 dark:hover:bg-medium-spring-green-600 text-white rounded-lg transition-colors font-medium flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   'Sending...'

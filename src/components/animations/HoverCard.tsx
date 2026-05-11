@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion';
+import { motion, Transition } from 'framer-motion';
 import { memo } from 'react';
 
 interface HoverCardProps {
   children: React.ReactNode;
   className?: string;
   whileHoverScale?: number;
-  transition?: any;
+  transition?: Transition;
 }
 
 const HoverCard: React.FC<HoverCardProps> = memo(({

@@ -1,34 +1,42 @@
 // Debounce utility to limit function calls
-export const debounce = <T extends (...args: any[]) => any>(func: T, wait: number) => {
-  let timeout: NodeJS.Timeout;
+export const debounce = <Args extends unknown[], ReturnValue>(
+  func: (...args: Args) => ReturnValue,
+  wait: number
+) => {
+  let timeout: ReturnType<typeof setTimeout>;
   return ((...args: Parameters<T>) => {
     clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(this, args), wait);
-  }) as T;
+    timeout = setTimeout(() => func(...args), wait);
+  }) as (...args: Args) => void;
 };
 
 // Throttle utility to ensure function calls happen at most once per interval
-export const throttle = <T extends (...args: any[]) => any>(func: T, limit: number) => {
-  let inThrottle: boolean;
-  return ((...args: Parameters<T>) => {
+export const throttle = <Args extends unknown[], ReturnValue>(
+  func: (...args: Args) => ReturnValue,
+  limit: number
+) => {
+  let inThrottle = false;
+  return ((...args: Args) => {
     if (!inThrottle) {
-      func.apply(this, args);
+      func(...args);
       inThrottle = true;
       setTimeout(() => inThrottle = false, limit);
     }
-  }) as T;
+  }) as (...args: Args) => void;
 };
 
 // Memoize utility to cache function results
-export const memoize = <T extends (...args: any[]) => any>(func: T) => {
-  const cache = new Map<string, ReturnType<T>>();
-  return ((...args: Parameters<T>): ReturnType<T> => {
+export const memoize = <Args extends unknown[], ReturnValue>(
+  func: (...args: Args) => ReturnValue
+) => {
+  const cache = new Map<string, ReturnValue>();
+  return ((...args: Args): ReturnValue => {
     const key = JSON.stringify(args);
     if (cache.has(key)) {
       return cache.get(key)!;
     }
-    const result = func.apply(this, args);
+    const result = func(...args);
     cache.set(key, result);
     return result;
-  }) as T;
+  }) as (...args: Args) => ReturnValue;
 };

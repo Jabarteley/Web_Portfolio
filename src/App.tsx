@@ -5,6 +5,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 // Lazy load components for better performance
 const Hero = lazy(() => import('./components/Hero'));
 const About = lazy(() => import('./components/About'));
+const Experience = lazy(() => import('./components/Experience'));
 const Projects = lazy(() => import('./components/Projects'));
 const Skills = lazy(() => import('./components/Skills'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -25,12 +26,13 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className={`transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`overflow-x-hidden transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <Header />
         <main>
           <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">Loading...</div>}>
             <Hero />
             <About />
+            <Experience />
             <Projects />
             <Skills />
             <Contact />

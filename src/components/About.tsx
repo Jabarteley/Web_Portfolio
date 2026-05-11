@@ -29,10 +29,10 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-white dark:bg-slate-900">
+    <section id="about" className="py-16 sm:py-24 bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
             <motion.h2
               className="text-3xl font-bold text-slate-800 dark:text-white mb-4"
               initial={{ opacity: 0, y: 20 }}
@@ -56,13 +56,13 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              I'm a passionate full-stack developer with expertise in building
-              scalable web applications using modern technologies.
+              Full Stack Developer, Computer Science student, and co-founder focused on
+              turning practical product ideas into production-ready systems.
             </motion.p>
           </div>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
           <AnimatedSection animationType="slideInLeft">
             <GlassCard
               className="bg-white/30 dark:bg-slate-800/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 p-0 relative"
@@ -71,13 +71,13 @@ const About = () => {
               <div className="relative">
                 <div className="aspect-[4/5] bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden">
                   <LazyImage
-                    src="/ad.avif"
+                    src="/abduljabar.jpeg"
                     alt="Professional portrait"
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <motion.div
-                  className="absolute -bottom-6 -right-6 w-32 h-32 bg-medium-spring-green-500 rounded-lg -z-10"
+                  className="absolute -bottom-3 -right-3 sm:-bottom-6 sm:-right-6 w-20 h-20 sm:w-32 sm:h-32 bg-medium-spring-green-500 rounded-lg -z-10"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -89,7 +89,7 @@ const About = () => {
 
           <AnimatedSection animationType="slideInRight">
             <GlassCard
-              className="bg-white/30 dark:bg-slate-800/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 p-6"
+              className="bg-white/30 dark:bg-slate-800/30 backdrop-blur-sm border border-medium-spring-green-200 dark:border-medium-spring-green-500/30 p-5 sm:p-6"
               blur="8px"
             >
               <motion.div
@@ -98,22 +98,23 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-4">
-                  <span className="text-medium-spring-green-500">Full Stack Developer</span> & Problem Solver
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mb-4">
+                  <span className="text-medium-spring-green-500">Full Stack Developer</span> & Product Thinker
                 </h3>
                 <p className="text-slate-600 dark:text-slate-300 mb-6">
-                  I'm a motivated and detail-oriented Full Stack Developer with strong skills in
-                  building responsive web applications using modern frontend and backend technologies.
-                  I'm passionate about creating efficient, scalable, and user-centric solutions.
+                  I'm a Full Stack Developer with hands-on experience building scalable web
+                  and mobile applications using React, React Native, Node.js, TypeScript,
+                  and modern deployment platforms. I enjoy owning products end to end, from
+                  architecture and data models to responsive interfaces and real-world launch.
                 </p>
                 <p className="text-slate-600 dark:text-slate-300 mb-8">
-                  Currently pursuing a B.Sc in Computer Science at Federal University Wukari,
-                  I combine technical expertise with creative problem-solving to deliver solutions
-                  that not only look great but also function flawlessly. I'm constantly learning
-                  and exploring new technologies to stay at the forefront of web development.
+                  I co-founded platforms including KampusHub and ByteConnect, where I worked
+                  across product strategy, backend systems, admin tools, marketplace workflows,
+                  and community-focused features. I'm currently pursuing a B.Sc. in Computer
+                  Science at Federal University Wukari, with expected graduation in 2026.
                 </p>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-4">
                   {qualities.map((quality, index) => (
                     <motion.div
                       key={index}
